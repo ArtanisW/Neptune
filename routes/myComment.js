@@ -13,20 +13,20 @@ router.get('/getInfo', checkLogin, function (req, res, next) {
             if (!comments) {
                 throw new Error('用户不存在任何联系人')
             }else {
-                var len = comments.length;
-                var arr = [];
-                for (var i=0; i<len; i++){
-                    var comment = {
-                        name: comments[i].name,
-                        title:comments[i].title,
-                        content: comments[i].content,
-                    }
-                    arr.push(comment);
-                }
+                // var len = comments.length;
+                // var arr = [];
+                // for (var i=0; i<len; i++){
+                //     var comment = {
+                //         name: comments[i].name,
+                //         title:comments[i].title,
+                //         content: comments[i].content,
+                //     }
+                //     arr.push(comment);
+                // }
                 var resJSON = {
                     code: 0,
                     errMsg: '',
-                    data: arr
+                    data: comments
                 };
                 res.send(resJSON);
             }
